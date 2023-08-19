@@ -23,3 +23,24 @@ function playRound() {
         return "tie"; 
     }
 }
+
+function game() {
+    let playerWins = 0;
+    let computerWins = 0; 
+    while (playerWins < 5 && computerWins < 5) {
+        let result = playRound();
+        console.log(result); 
+        if (result == "win") {
+            playerWins += 1;
+        } else if (result == "lose") {
+            computerWins += 1; 
+        }
+    }
+    if (playerWins == 5) {
+        console.log("You win!");
+    } else {
+        console.log("You lose!"); 
+    }
+}
+
+game();
