@@ -8,3 +8,18 @@ function getComputerChoice() {
         return "scissors"; 
     }
 }
+
+function playRound() {
+    let computerChoice = getComputerChoice();
+    let playerChoice = prompt("What is your choice: ").toLowerCase(); 
+    while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors") {
+        playerChoice = prompt("Please enter a valid input: ").toLowerCase(); 
+    }
+    if (playerChoice == "rock" && computerChoice == "scissors" || playerChoice == "scissors" && computerChoice == "paper" || playerChoice == "paper" && computerChoice == "rock") {
+        return "win";
+    } else if (playerChoice == "rock" && computerChoice == "paper" || playerChoice == "scissors" && computerChoice == "rock" || playerChoice == "paper" && computerChoice == "scissors") {
+        return "lose"; 
+    } else {
+        return "tie"; 
+    }
+}
